@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'purchases#index'
-  post 'purchases/upload', to: 'purchases#upload'
+  root 'vendas#index'
+  post 'vendas/upload', to: 'vendas#upload'
 end

@@ -17,3 +17,11 @@
 .main-section {
 	background-color: #7e61ea;
 }
+
+.main-heading, .main-heading > h1, .main-heading > h2 {
+	color: white;
+}
+
+.form-btn {
+	margin-top: 30px;
+}

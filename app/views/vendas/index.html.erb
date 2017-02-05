@@ -1,0 +1,51 @@
+<section class="section main-section">
+  <div class="container">
+    <div class="heading main-heading">
+      <h1 class="title">Selecione o arquivo para importação</h1>
+      <h2 class="subtitle">
+        O arquivo deve estar no formato .txt e a primeira linha deve conter a identificação das colunas.
+      </h2>
+      <%= form_tag 'vendas/upload', method: 'post', :multipart => true do %>
+      	<p class="control">
+  				<%= file_field_tag "data", accept: '.txt' %>
+  			</p>
+  			<%= submit_tag 'Fazer Upload', class: 'button form-btn' %>
+      <% end %>   	
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="heading">
+      <h1 class="title">Registros Importados</h1>
+    </div>
+    <% if @vendas %>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Comprador</th>
+            <th>Descrição</th>
+            <th>Preço Unitário</th>
+            <th>Quantidade</th>
+            <th>Endereço</th>
+            <th>Fornecedor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @vendas.each do |venda| %>
+            <tr>
+              <td><%= venda.comprador %></td>
+              <td><%= venda.descricao %></td>
+              <td><%= venda.preco_unitario %></td>
+              <td><%= venda.quantidade %></td>
+              <td><%= venda.endereco %></td>
+              <td><%= venda.fornecedor %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+
+</section>
