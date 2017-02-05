@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="heading">
+    <h1 class="title">Selecione o arquivo para importação</h1>
+    <!-- <h2 class="subtitle">
+      O arquivo deve estar no formato .txt e a primeira linha deve conter a identificação das colunas.
+    </h2> -->
+    <%= form_tag 'purchases/upload', method: 'post', :multipart => true do %>
+    	<p class="control">
+				<%= file_field_tag "data", accept: '.txt' %>
+			</p>
+			<%= submit_tag 'Enviar', class: 'button' %>
+    <% end %>   	
+  </div>
+</div>
