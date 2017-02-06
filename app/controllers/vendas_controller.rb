@@ -1,6 +1,7 @@
 class VendasController < ApplicationController
   def index
   	@vendas = Venda.all
+  	@valor_total = Venda.total_value
   end
 
   def upload

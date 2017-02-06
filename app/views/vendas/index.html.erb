@@ -28,21 +28,31 @@
           <tr>
             <th>Comprador</th>
             <th>Descrição</th>
-            <th>Preço Unitário</th>
-            <th>Quantidade</th>
             <th>Endereço</th>
             <th>Fornecedor</th>
+            <th>Preço Unitário</th>
+            <th>Quantidade</th>
           </tr>
         </thead>
+        <tfoot>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>Total Bruto</th>
+            <th><%= converte_reais(@valor_total) %></th>
+          </tr>
+        </tfoot>
         <tbody>
           <% @vendas.each do |venda| %>
             <tr>
               <td><%= venda.comprador %></td>
               <td><%= venda.descricao %></td>
-              <td><%= venda.preco_unitario %></td>
-              <td><%= venda.quantidade %></td>
               <td><%= venda.endereco %></td>
               <td><%= venda.fornecedor %></td>
+              <td><%= converte_reais(venda.preco_unitario) %></td>
+              <td><%= venda.quantidade %></td>
             </tr>
           <% end %>
         </tbody>
