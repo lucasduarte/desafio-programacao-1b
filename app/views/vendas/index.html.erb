@@ -20,7 +20,9 @@
     <div class="heading">
       <h1 class="title">Registros Importados</h1>
     </div>
-    <% if @vendas %>
+    <% if @vendas.empty?  %>
+      <span>Nenhum dado a ser exibido.</span>
+    <% else %>
       <table class="table">
         <thead>
           <tr>

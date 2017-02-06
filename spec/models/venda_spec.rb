@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Venda, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "valid factory" do
+    it "has a valid factory" do
+      expect(build(:venda)).to be_valid
+    end  
+  end
+  
+  
 end
